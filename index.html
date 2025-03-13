@@ -67,25 +67,25 @@
             summaryHTML += `<p><strong>Total Data:</strong> ${data.length}</p>`;
             
             if (entity === 'TPS') {
-                summaryHTML += generateTopTable(data, 'checkpoint.protection_name', 5, 'Top 5 Protection Name', ['checkpoint.attack', 'event.action']);
+                summaryHTML += generateTopTable(data, 'checkpoint.protection_name', 5, 'Top 5 Protection Name', ['checkpoint.attack', 'event.action', 'event.dataset']);
                 summaryHTML += generateTopTable(data, 'source.ip', 10, 'Top 10 Source IP');
                 summaryHTML += generateTopTable(data, 'destination.ip', 10, 'Top 10 Destination IP');
                 summaryHTML += generateTopTable(data, 'event.category', 5, 'Top 5 Event Category');
             } else if (entity === 'IPCTPK') {
-                summaryHTML += generateTopTable(data, 'message', 5, 'Top 5 Message', ['event.action', 'fortinet.firewall.action']);
-                summaryHTML += generateTopTable(data, 'rule.name', 5, 'Top 5 Rule Name', ['event.action', 'fortinet.firewall.action']);
+                summaryHTML += generateTopTable(data, 'message', 5, 'Top 5 Message', ['event.action', 'fortinet.firewall.action', 'event.dataset']);
+                summaryHTML += generateTopTable(data, 'rule.name', 5, 'Top 5 Rule Name', ['event.action', 'fortinet.firewall.action', 'event.dataset']);
                 summaryHTML += generateTopTable(data, 'source.ip', 10, 'Top 10 Source IP');
                 summaryHTML += generateTopTable(data, 'destination.ip', 10, 'Top 10 Destination IP');
                 summaryHTML += generateTopTable(data, 'event.category', 5, 'Top 5 Event Category');
             } else if (entity === 'TTL') {
-                summaryHTML += generateTopTable(data, 'message', 5, 'Top 5 Message', ['event.action', 'event.outcome', 'fortinet.firewall.action']);
-                summaryHTML += generateTopTable(data, 'rule.description', 5, 'Top 5 Rule Description', ['event.action', 'event.outcome', 'fortinet.firewall.action']);
-                summaryHTML += generateTopTable(data, 'rule.name', 5, 'Top 5 Rule Name', ['event.action', 'event.outcome', 'fortinet.firewall.action']);
+                summaryHTML += generateTopTable(data, 'message', 5, 'Top 5 Message', ['event.action', 'event.outcome', 'fortinet.firewall.action', 'data_stream.dataset']);
+                summaryHTML += generateTopTable(data, 'rule.description', 5, 'Top 5 Rule Description', ['event.action', 'event.outcome', 'fortinet.firewall.action', 'data_stream.dataset']);
+                summaryHTML += generateTopTable(data, 'rule.name', 5, 'Top 5 Rule Name', ['event.action', 'event.outcome', 'fortinet.firewall.action', 'data_stream.dataset']);
                 summaryHTML += generateTopTable(data, 'source.ip', 10, 'Top 10 Source IP');
                 summaryHTML += generateTopTable(data, 'destination.ip', 10, 'Top 10 Destination IP');
                 summaryHTML += generateTopTable(data, 'event.category', 5, 'Top 5 Event Category');
             } else if (entity === 'TPKS') {
-                summaryHTML += generateTopTable(data, 'message', 5, 'Top 5 Message');
+                summaryHTML += generateTopTable(data, 'message', 5, 'Top 5 Message', ['event.dataset']);
                 summaryHTML += generateTopTable(data, 'source.ip', 10, 'Top 10 Source IP');
                 summaryHTML += generateTopTable(data, 'host.hostname', 10, 'Top 10 Hostname');
                 summaryHTML += generateTopTable(data, 'event.category', 5, 'Top 5 Event Category');
